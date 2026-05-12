@@ -157,6 +157,7 @@
 
     html {
       font-size: 16px;
+      overflow-x: hidden;
     }
 
     body {
@@ -427,7 +428,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 1.5px;
       border: 1.5px solid var(--border);
     }
@@ -704,27 +705,26 @@
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 220px);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
-      justify-content: center;
     }
 
-    @media(max-width:700px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 220px);
-      }
+    .gallery-grid.two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .g-item {
       overflow: hidden;
       position: relative;
       background: var(--card);
-      width: 220px;
-      height: 220px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
     }
 
     .g-item img {
@@ -1266,6 +1266,68 @@
         padding: 1rem 1.5rem;
       }
     }
+
+    /* ── MOBILE RESPONSIVO ──────────────────────── */
+    @media(max-width:768px) {
+      section {
+        padding: 4rem 1.25rem;
+      }
+
+      #protese {
+        padding: 4rem 1.25rem;
+      }
+
+      #cta {
+        padding: 4rem 1.25rem;
+      }
+
+      footer {
+        padding: 3rem 1.25rem 2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .sliders-container {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+      }
+
+      .slider-section {
+        margin-bottom: 2rem;
+      }
+
+      /* ── GALERIA CARROSSEL ─── */
+      .gallery-grid,
+      .gallery-grid.two-col {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+
+      .gallery-grid::-webkit-scrollbar,
+      .gallery-grid.two-col::-webkit-scrollbar {
+        display: none;
+      }
+
+      .g-item {
+        flex: 0 0 40vw;
+        width: 40vw;
+        height: 40vw;
+        aspect-ratio: unset;
+        scroll-snap-align: start;
+      }
+    }
   </style>
 </head>
 
@@ -1560,7 +1622,7 @@
           <div class="slider-header" style="margin-bottom: 2rem;">
             <h3 class="slider-title">Prótese Capilar Feminina · Antes e Depois</h3>
           </div>
-          <div class="gallery-grid" style="grid-template-columns: repeat(2, 220px); margin-bottom: 3rem;">
+          <div class="gallery-grid two-col" style="margin-bottom: 3rem;">
             <div class="g-item">
               <img src="img/antesprotesefem1.jpeg" alt="Prótese feminina antes 1" />
             </div>
@@ -1581,7 +1643,7 @@
           <div class="slider-header" style="margin-bottom: 2rem;">
             <h3 class="slider-title">Cortes de Cabelo</h3>
           </div>
-          <div class="gallery-grid" style="grid-template-columns: repeat(3, 220px); margin-bottom: 3rem;">
+          <div class="gallery-grid" style="margin-bottom: 3rem;">
             <div class="g-item">
               <img src="img/cabelocurto.jpeg" alt="Cabelo curto" />
             </div>
@@ -1599,7 +1661,7 @@
           <div class="slider-header" style="margin-bottom: 2rem;">
             <h3 class="slider-title">Coloração</h3>
           </div>
-          <div class="gallery-grid" style="grid-template-columns: repeat(3, 220px); margin-bottom: 3rem;">
+          <div class="gallery-grid" style="margin-bottom: 3rem;">
             <div class="g-item">
               <img src="img/color1.jpeg" alt="Cor 1" />
             </div>
@@ -1728,7 +1790,7 @@
         <p>Sábado: 09h às 18h</p>
         <p>Dom / Seg: Fechado</p>
 
-        <div class="map-wrap" style="margin-top:1.5rem;width:calc(100% + 3rem);margin-left:-3rem;">
+        <div class="map-wrap" style="margin-top:1.5rem;">
           <iframe
             src="https://maps.google.com/maps?q=R.+Santos+Dumont,+423+-+Centro,+Ponta+Grossa+-+PR,+84010-360&t=&z=16&ie=UTF8&iwloc=&output=embed"
             title="Localização Nyl Hair Design" allowfullscreen loading="lazy"
@@ -1767,12 +1829,14 @@
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
+      const isMobile = window.innerWidth <= 768;
+      const hPad = isMobile ? '1.5rem' : '2.5rem';
       if (window.scrollY > 80) {
         navbar.style.background = 'rgba(10,10,10,.97)';
-        navbar.style.padding = '0.9rem 2.5rem';
+        navbar.style.padding = `0.9rem ${hPad}`;
       } else {
         navbar.style.background = 'rgba(10,10,10,.85)';
-        navbar.style.padding = '1.25rem 2.5rem';
+        navbar.style.padding = isMobile ? `1rem ${hPad}` : `1.25rem ${hPad}`;
       }
     });
 
