@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel — Nyl Hair Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/locales/pt-br.global.min.js"></script>
+  <style>:root{--black:#0a0a0a;--dark:#111;--card:#181818;--border:#2a2a2a;--gold:#c9a96e;--gold-lt:#e6c990;--white:#f5f2ed;--muted:#888880;--danger:#ff6b6b}*,:before,:after{box-sizing:border-box;margin:0;padding:0}body{background:var(--black);color:var(--white);min-height:100vh;font-family:Inter,sans-serif;font-weight:300}a{color:inherit;text-decoration:none}.topbar{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:20;background:#0a0a0ae6;justify-content:space-between;align-items:center;padding:1rem 2rem;display:flex;position:sticky;top:0}.brand{align-items:center;display:flex}.brand img{width:auto;height:36px;display:block}.user-meta{color:var(--muted);align-items:center;gap:1rem;font-size:.85rem;display:flex}.btn-ghost{border:1px solid var(--border);color:var(--white);letter-spacing:.15em;text-transform:uppercase;cursor:pointer;background:0 0;padding:.5rem 1rem;font-family:inherit;font-size:.7rem;transition:all .3s}.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}.layout{min-height:calc(100vh - 65px);display:flex}.sidebar{border-right:1px solid var(--border);flex-direction:column;gap:.25rem;width:220px;padding:1.5rem 0;transition:width .3s;display:flex;position:relative}.sidebar.collapsed{width:60px}.sidebar.collapsed .tab-button span{display:none}.sidebar-toggle{color:var(--muted);cursor:pointer;background:0 0;border:none;align-self:flex-start;margin-bottom:.5rem;padding:.9rem 1.5rem;font-family:inherit;font-size:1rem;transition:color .3s}.sidebar-toggle:hover{color:var(--gold)}.sidebar.collapsed .sidebar-toggle{padding:.9rem .7rem}.tab-button{color:var(--muted);text-align:left;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;background:0 0;border:none;border-left:2px solid #0000;padding:.9rem 1.5rem;font-family:inherit;font-size:.75rem;transition:all .3s}.tab-button:hover{color:var(--white)}.tab-button.active{color:var(--gold);border-left-color:var(--gold);background:#c9a96e0d}.main{flex:1;padding:2.5rem;overflow-y:auto}.view{display:none}.view.active{display:block}h1{margin-bottom:.3rem;font-family:Playfair Display,serif;font-size:2rem;font-weight:700}h2{margin:2.5rem 0 1rem;font-family:Playfair Display,serif;font-size:1.3rem;font-weight:700}.view>p.subtitle{color:var(--muted);margin-bottom:2rem;font-size:.9rem}form.stack{gap:0;max-width:520px;display:grid}label{letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:1rem;margin-bottom:.5rem;font-size:.7rem;display:block}label:first-child{margin-top:0}input,select,textarea{background:var(--dark);border:1px solid var(--border);width:100%;color:var(--white);padding:.8rem 1rem;font-family:inherit;font-size:.95rem;font-weight:300;transition:border-color .3s}input:focus,select:focus,textarea:focus{border-color:var(--gold);outline:none}textarea{resize:vertical;min-height:80px}.btn-primary{background:var(--gold);color:var(--black);text-transform:uppercase;letter-spacing:.2em;cursor:pointer;border:none;justify-self:start;margin-top:1.5rem;padding:.9rem 1.5rem;font-family:inherit;font-size:.75rem;font-weight:600;transition:all .3s}.btn-primary:hover:not(:disabled){background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 32px #c9a96e4d}.btn-primary:disabled{opacity:.5;cursor:not-allowed}.item-row{background:var(--card);border:1px solid var(--border);flex-direction:column;gap:.75rem;margin-bottom:.75rem;padding:1.25rem;font-size:.9rem;list-style:none;display:flex}.item-row-content{grid-template-columns:1fr 1fr;align-items:start;gap:1.5rem;display:grid}@media (max-width:640px){.item-row-content{grid-template-columns:1fr;gap:.75rem}}.item-row-field{flex-direction:column;gap:.25rem;display:flex}.item-row-label{letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-size:.65rem}.item-row-value{color:var(--white);font-size:.95rem;font-weight:500}.item-row strong{font-weight:500}.item-row .muted{color:var(--muted);margin-left:.75rem;font-size:.85rem}.item-row .badge{color:var(--gold);letter-spacing:.15em;text-transform:uppercase;background:#c9a96e26;margin-left:.5rem;padding:.2rem .6rem;font-size:.65rem;display:inline-block}.btn-mini{border:1px solid var(--border);color:var(--muted);letter-spacing:.15em;text-transform:uppercase;cursor:pointer;background:0 0;padding:.4rem .9rem;font-family:inherit;font-size:.65rem;transition:all .3s}.btn-mini:hover{border-color:var(--gold);color:var(--gold)}.btn-mini.active{background:var(--gold);color:var(--black);border-color:var(--gold)}ul{list-style:none}.empty{color:var(--muted);padding:1rem 0;font-size:.9rem;font-style:italic}.toast{background:var(--card);border:1px solid var(--border);color:var(--white);z-index:1000;max-width:360px;padding:1rem 1.5rem;font-size:.9rem;transition:transform .3s;position:fixed;bottom:2rem;right:2rem;transform:translateY(200%)}.toast.show{transform:translateY(0)}.toast.success{border-color:var(--gold);color:var(--gold)}.toast.error{border-color:var(--danger);color:var(--danger)}#calendar{max-width:1200px}.fc{color:var(--white);font-family:Inter,sans-serif}.fc .fc-toolbar-title{color:var(--gold);font-family:Playfair Display,serif;font-size:1.3rem;font-weight:700}.fc .fc-button{background:var(--card);border:1px solid var(--border);color:var(--white);text-transform:uppercase;letter-spacing:.12em;box-shadow:none;padding:.45rem .9rem;font-size:.7rem;font-weight:500}.fc .fc-button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}.fc .fc-button:focus{box-shadow:0 0 0 2px #c9a96e4d}.fc .fc-button-primary:not(:disabled).fc-button-active,.fc .fc-button-primary:not(:disabled):active{background:var(--gold);color:var(--black);border-color:var(--gold)}.fc-theme-standard td,.fc-theme-standard th,.fc-theme-standard .fc-scrollgrid{border-color:var(--border)}.fc .fc-col-header-cell-cushion,.fc .fc-daygrid-day-number,.fc .fc-timegrid-slot-label-cushion{color:var(--muted);font-size:.8rem;text-decoration:none}.fc-day-today{background:#c9a96e0f!important}.fc-event{background:var(--gold);color:var(--black);cursor:pointer;border:none;padding:2px 4px;font-size:.8rem;font-weight:500}.fc-event.status-cancelled{opacity:.35;text-decoration:line-through}.fc-event.status-completed{background:var(--muted);color:var(--black)}.fc-list-day-cushion{background:var(--card)!important}.fc-list-event:hover td{background:#c9a96e14!important}.fc-timegrid-slot{height:4em!important}.modal-overlay{z-index:1000;background:#000000b3;justify-content:center;align-items:center;display:none;position:fixed;inset:0}.modal-overlay.active{display:flex}.modal{background:var(--card);border:1px solid var(--border);border-radius:8px;width:90%;max-width:500px;max-height:90vh;padding:2rem;position:relative;overflow-y:auto}.modal h2{margin-top:0}.modal-close{color:var(--muted);cursor:pointer;background:0 0;border:none;font-size:1.5rem;transition:color .3s;position:absolute;top:1rem;right:1rem}.modal-close:hover{color:var(--white)}</style>
+  <script type="module" crossorigin src="/assets/dashboard-DjTO2tmS.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/supabase-Bo6pDbYz.js">
+</head>
+
+<body>
+  <nav class="topbar">
+    <div class="brand"></div>
+    <div class="user-meta">
+      <span id="user-email"></span>
+      <button class="btn-ghost" id="logout-btn">Sair</button>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+      <button class="tab-button active" data-tab="agenda"><span>Agenda</span></button>
+      <button class="tab-button" data-tab="novo"><span>Novo Agendamento</span></button>
+      <button class="tab-button" data-tab="servicos"><span>Serviços</span></button>
+    </aside>
+
+    <main class="main">
+      <section class="view active" data-view="agenda">
+        <h1>Agenda</h1>
+        <p class="subtitle">Clique em um agendamento para cancelar.</p>
+        <div id="calendar"></div>
+      </section>
+
+      <section class="view" data-view="novo">
+        <h1>Novo Agendamento</h1>
+        <p class="subtitle">Cadastre o cliente e reserve um horário.</p>
+        <form class="stack" id="booking-form" novalidate>
+          <label for="svc-select">Serviço</label>
+          <select id="svc-select" required></select>
+
+          <label for="slot-select">Horário disponível</label>
+          <select id="slot-select" required disabled>
+            <option value="">Selecione um serviço primeiro</option>
+          </select>
+
+          <label for="client-name">Nome do cliente</label>
+          <input id="client-name" type="text" autocomplete="name" required />
+
+          <label for="client-phone">Telefone (WhatsApp)</label>
+          <input id="client-phone" type="tel" placeholder="(42) 99999-9999" required />
+
+          <label for="notes">Observações (opcional)</label>
+          <textarea id="notes"></textarea>
+
+          <button type="submit" class="btn-primary">Confirmar Agendamento</button>
+        </form>
+      </section>
+
+      <section class="view" data-view="servicos">
+        <h1>Serviços</h1>
+        <p class="subtitle">Ative, desative ou crie novos serviços.</p>
+        <ul id="services-list"></ul>
+
+        <h2>Novo Serviço</h2>
+        <form class="stack" id="service-form" novalidate>
+          <label for="svc-name">Nome</label>
+          <input id="svc-name" type="text" required />
+
+          <label for="svc-duration">Duração (minutos)</label>
+          <input id="svc-duration" type="number" min="15" step="15" value="30" required />
+
+          <label for="svc-desc">Descrição</label>
+          <input id="svc-desc" type="text" />
+
+          <button type="submit" class="btn-primary">Criar Serviço</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="quick-booking-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">✕</button>
+      <h2>Agendamento Rápido</h2>
+      <form class="stack" id="quick-booking-form" novalidate>
+        <label for="quick-svc">Serviço</label>
+        <select id="quick-svc" required></select>
+
+        <label for="quick-datetime">Data e hora</label>
+        <input id="quick-datetime" type="datetime-local" required readonly />
+
+        <label for="quick-name">Nome do cliente</label>
+        <input id="quick-name" type="text" autocomplete="name" required />
+
+        <label for="quick-phone">Telefone (WhatsApp)</label>
+        <input id="quick-phone" type="tel" placeholder="(42) 99999-9999" required />
+
+        <label for="quick-notes">Observações (opcional)</label>
+        <textarea id="quick-notes"></textarea>
+
+        <button type="submit" class="btn-primary">Confirmar Agendamento</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+
+</html>

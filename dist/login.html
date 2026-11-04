@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Nyl Hair Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>:root{--black:#0a0a0a;--dark:#111;--card:#181818;--border:#2a2a2a;--gold:#c9a96e;--gold-lt:#e6c990;--white:#f5f2ed;--muted:#888880;--danger:#ff6b6b}*,:before,:after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{background:var(--black);color:var(--white);background-image:radial-gradient(circle at 20% 20%,#c9a96e14,#0000 40%),radial-gradient(circle at 80% 80%,#c9a96e0d,#0000 40%);justify-content:center;align-items:center;min-height:100vh;padding:2rem 1.5rem;font-family:Inter,sans-serif;font-weight:300;display:flex}.login-card{background:var(--card);border:1px solid var(--border);width:100%;max-width:420px;padding:3rem 2.5rem;position:relative}.login-card:before{content:"";background:linear-gradient(90deg, transparent, var(--gold), transparent);height:1px;position:absolute;top:0;left:0;right:0}.brand{text-align:center;margin-bottom:2.5rem}.brand-logo{max-width:180px;height:auto;margin:0 auto;display:block}.brand-eyebrow{letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-top:.5rem;font-size:.65rem}h1{text-align:center;margin-bottom:.4rem;font-family:Playfair Display,serif;font-size:1.75rem;font-weight:700}.subtitle{text-align:center;color:var(--muted);margin-bottom:2rem;font-size:.85rem}label{letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;font-size:.7rem;display:block}input{background:var(--dark);border:1px solid var(--border);width:100%;color:var(--white);margin-bottom:1.25rem;padding:.9rem 1rem;font-family:inherit;font-size:.95rem;transition:border-color .3s}input:focus{border-color:var(--gold);outline:none}.btn-primary{background:var(--gold);width:100%;color:var(--black);text-transform:uppercase;letter-spacing:.2em;cursor:pointer;border:none;margin-top:.5rem;padding:.9rem 1.5rem;font-family:inherit;font-size:.75rem;font-weight:600;transition:all .3s}.btn-primary:hover:not(:disabled){background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 32px #c9a96e4d}.btn-primary:disabled{opacity:.5;cursor:not-allowed}.message{border:1px solid var(--border);margin-top:1rem;padding:.75rem 1rem;font-size:.85rem;display:none}.message.error{border-color:var(--danger);color:var(--danger);display:block}.message.success{border-color:var(--gold);color:var(--gold);display:block}.back-link{text-align:center;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-top:1.5rem;font-size:.75rem;text-decoration:none;transition:color .3s;display:block}.back-link:hover{color:var(--gold-lt)}</style>
+  <script type="module" crossorigin src="/assets/login-Cr7ZMOQR.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/supabase-Bo6pDbYz.js">
+</head>
+
+<body>
+  <main class="login-card">
+    <div class="brand">
+      <img src="/assets/logo_nyl_branca-Bz2BDOdY.png" alt="Nyl Hair Design" class="brand-logo" />
+      <div class="brand-eyebrow">Área Restrita</div>
+    </div>
+
+    <h1>Acesso ao Painel</h1>
+    <p class="subtitle">Entre para gerenciar clientes e agendamentos.</p>
+
+    <form id="login-form" novalidate>
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required />
+
+      <button type="submit" class="btn-primary" id="submit-btn">Entrar</button>
+
+      <div class="message" id="message"></div>
+    </form>
+
+    <a href="/" class="back-link">← Voltar ao site</a>
+  </main>
+
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+
+</html>
