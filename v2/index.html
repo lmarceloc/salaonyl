@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5efe7" />
+    <title>Nyl Hair Design — reserve seu momento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Nyl Hair Design, início">
+        <img src="../logo_nyl_branca.png" alt="Nyl Hair Design" />
+      </a>
+      <div class="topbar-meta">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Agenda aberta</span>
+        <a href="https://www.instagram.com/nylhairdesign" target="_blank" rel="noreferrer">Instagram ↗</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Nyl Hair Design · Ponta Grossa</p>
+          <h1 id="hero-title">Seu próximo<br /><em>momento Nyl.</em></h1>
+          <p class="hero-lede">Escolha o cuidado, encontre um horário e mande tudo pronto para a nossa equipe confirmar.</p>
+          <button class="button button-dark" data-start>Escolher meu horário <span aria-hidden="true">↗</span></button>
+          <div class="hero-note"><span class="scribble">✳</span><span>Atendimento com hora marcada<br />Terça a sábado · 09h às 20h</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Imagem do espaço Nyl Hair Design">
+          <img src="../img/espaco1.jpeg" alt="Interior acolhedor do salão Nyl Hair Design" />
+          <div class="visual-stamp"><span>cuidado</span><strong>sem<br />pressa</strong></div>
+          <div class="visual-caption"><span>01 / espaço Nyl</span><span>Rua Santos Dumont, 423</span></div>
+        </div>
+      </section>
+
+      <section class="booking section-shell" id="booking" aria-labelledby="booking-title">
+        <div class="booking-head">
+          <div>
+            <p class="eyebrow">Reserva guiada</p>
+            <h2 id="booking-title">Monte seu atendimento.</h2>
+          </div>
+          <div class="progress" aria-label="Progresso da reserva">
+            <span class="progress-label" data-progress-label>Passo 1 de 3</span>
+            <div class="progress-track"><span data-progress-bar></span></div>
+          </div>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-panel">
+            <div class="step-panel is-active" data-step-panel="1">
+              <div class="step-kicker"><span>01</span><span>Escolha o cuidado</span></div>
+              <h3>O que você quer fazer?</h3>
+              <p class="step-help">A duração aparece para você planejar seu tempo. <span class="sample-pill">exemplo visual</span></p>
+              <div class="service-list" role="list">
+                <button class="choice-card" data-service="Corte masculino" data-duration="45 min" role="listitem">
+                  <span class="choice-icon">✂</span><span class="choice-copy"><strong>Corte masculino</strong><small>Precisão, acabamento e conversa boa.</small></span><span class="choice-time">45 min</span><span class="choice-check" aria-hidden="true">✓</span>
+                </button>
+                <button class="choice-card" data-service="Barba & acabamento" data-duration="30 min" role="listitem">
+                  <span class="choice-icon">◒</span><span class="choice-copy"><strong>Barba & acabamento</strong><small>Contorno limpo e cuidado nos detalhes.</small></span><span class="choice-time">30 min</span><span class="choice-check" aria-hidden="true">✓</span>
+                </button>
+                <button class="choice-card" data-service="Prótese capilar" data-duration="2h" role="listitem">
+                  <span class="choice-icon">✦</span><span class="choice-copy"><strong>Prótese capilar</strong><small>Consulta e aplicação com resultado natural.</small></span><span class="choice-time">2h</span><span class="choice-check" aria-hidden="true">✓</span>
+                </button>
+                <button class="choice-card" data-service="Coloração & beleza" data-duration="1h30" role="listitem">
+                  <span class="choice-icon">✺</span><span class="choice-copy"><strong>Coloração & beleza</strong><small>Um plano pensado para o seu cabelo.</small></span><span class="choice-time">1h30</span><span class="choice-check" aria-hidden="true">✓</span>
+                </button>
+              </div>
+              <div class="step-actions"><button class="button button-coral" data-next disabled>Continuar para o dia <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="step-panel" data-step-panel="2" hidden>
+              <div class="step-kicker"><span>02</span><span>Escolha o melhor momento</span></div>
+              <h3>Qual dia combina com você?</h3>
+              <p class="step-help">Estes horários são <span class="sample-pill">amostras</span> para este protótipo. A equipe confirma por mensagem.</p>
+              <div class="date-picker" role="list" aria-label="Dias disponíveis">
+                <button class="date-card" data-date="Terça, 26 de novembro" role="listitem"><small>TER</small><strong>26</strong><span>nov</span></button>
+                <button class="date-card" data-date="Quarta, 27 de novembro" role="listitem"><small>QUA</small><strong>27</strong><span>nov</span></button>
+                <button class="date-card" data-date="Quinta, 28 de novembro" role="listitem"><small>QUI</small><strong>28</strong><span>nov</span></button>
+                <button class="date-card" data-date="Sexta, 29 de novembro" role="listitem"><small>SEX</small><strong>29</strong><span>nov</span></button>
+              </div>
+              <div class="time-heading"><span>Horários livres</span><small data-date-hint>Escolha um dia primeiro</small></div>
+              <div class="time-grid" role="list" aria-label="Horários disponíveis">
+                <button class="time-card" data-time="09:00" disabled role="listitem">09:00</button>
+                <button class="time-card" data-time="10:30" disabled role="listitem">10:30</button>
+                <button class="time-card" data-time="13:30" disabled role="listitem">13:30</button>
+                <button class="time-card" data-time="15:00" disabled role="listitem">15:00</button>
+                <button class="time-card" data-time="17:30" disabled role="listitem">17:30</button>
+              </div>
+              <div class="step-actions step-actions-split"><button class="button button-quiet" data-back>← Voltar</button><button class="button button-coral" data-next disabled>Escrever mensagem <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="step-panel" data-step-panel="3" hidden>
+              <div class="step-kicker"><span>03</span><span>Deixe um recado</span></div>
+              <h3>Quase lá.</h3>
+              <p class="step-help">A mensagem vai chegar para o dono do salão com as escolhas que você fez.</p>
+              <div class="selection-recap" aria-label="Resumo do atendimento"><div><span>Serviço</span><strong data-recap-service>—</strong></div><div><span>Quando</span><strong data-recap-date>—</strong></div><div><span>Horário</span><strong data-recap-time>—</strong></div></div>
+              <label class="field-label" for="customer-name">Como podemos te chamar?</label>
+              <input class="text-field" id="customer-name" type="text" placeholder="Seu nome" autocomplete="name" />
+              <label class="field-label" for="customer-message">Quer acrescentar algo? <span>opcional</span></label>
+              <textarea class="text-field text-area" id="customer-message" rows="3" placeholder="Ex.: é minha primeira vez na Nyl..."></textarea>
+              <div class="owner-note"><span class="owner-avatar">N</span><p><strong>Mensagem para a equipe Nyl</strong><br /><span>Vamos confirmar o horário por WhatsApp.</span></p></div>
+              <div class="step-actions step-actions-split"><button class="button button-quiet" data-back>← Voltar</button><button class="button button-coral" data-submit>Preparar mensagem <span aria-hidden="true">↗</span></button></div>
+              <p class="not-built">Não construído nesta versão: confirmação automática de agenda e envio real ao WhatsApp.</p>
+            </div>
+
+            <div class="step-panel success-panel" data-step-panel="success" hidden>
+              <div class="success-mark">✓</div><p class="eyebrow">Tudo pronto</p><h3>Sua mensagem está pronta.</h3><p class="step-help">O próximo passo é abrir o WhatsApp e enviar o pedido para a equipe Nyl confirmar.</p>
+              <div class="message-preview"><small>Mensagem que será enviada</small><p data-message-preview>—</p></div>
+              <a class="button button-dark full-button" data-whatsapp target="_blank" rel="noreferrer" href="https://wa.me/5542988820334">Abrir WhatsApp <span aria-hidden="true">↗</span></a>
+              <button class="text-link" data-restart>Começar outra reserva</button>
+            </div>
+          </div>
+
+          <aside class="booking-aside">
+            <div class="aside-card">
+              <p class="aside-label">Seu atendimento</p>
+              <div class="aside-empty" data-aside-empty><span>✳</span><p>Escolha um serviço<br />para começar.</p></div>
+              <div class="aside-summary" data-aside-summary hidden><span class="summary-service" data-summary-service>—</span><strong data-summary-date>—</strong><span data-summary-time>—</span><div class="summary-rule"></div><small data-summary-duration>—</small></div>
+              <div class="aside-footer"><span>Rua Santos Dumont, 423</span><span>Ponta Grossa · PR</span></div>
+            </div>
+            <blockquote>“O melhor resultado começa quando você se sente à vontade.”<cite>— Nyl Hair Design</cite></blockquote>
+          </aside>
+        </div>
+      </section>
+
+      <section class="aftercare section-shell" aria-labelledby="aftercare-title"><div class="aftercare-copy"><p class="eyebrow">Depois do agendamento</p><h2 id="aftercare-title">Chegue como você é.</h2><p>O resto a gente cuida. Nosso espaço fica no centro de Ponta Grossa, com atendimento pensado para você desacelerar.</p></div><img src="../img/depois1.jpeg" alt="Resultado de corte realizado pela Nyl Hair Design" /><div class="aftercare-tag">02 / resultado real</div></section>
+    </main>
+
+    <footer class="footer section-shell"><span>Nyl Hair Design © 2026</span><span>feito com atenção aos detalhes</span><a href="https://www.instagram.com/nylhairdesign" target="_blank" rel="noreferrer">@nylhairdesign ↗</a></footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
