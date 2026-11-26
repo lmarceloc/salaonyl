@@ -2490,7 +2490,18 @@
         return;
       }
 
-      const when = new Date(data?.[0]?.booked_at || state.slot);
+      const booking = data?.[0];
+      const when = new Date(booking?.booked_at || state.slot);
+      let emailSent = false;
+      if (booking?.booking_id) {
+        try {
+          const confirmation = await fetch('/api/send-booking-confirmation', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ booking_id: booking.booking_id }),
+          });
+          emailSent = confirmation.ok;
+        } catch { /* a reserva já foi criada; a confirmação pode ser reenviada */ }
+      }
       $('bk-sum-status').textContent = 'Recebido';
       form.innerHTML = `
         <div class="bk-done" role="status">
