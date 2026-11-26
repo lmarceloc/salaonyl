@@ -32,17 +32,18 @@ function escapeHtml(value) {
 function bookingDetails(booking) {
   const email = String(booking.client_email || '').trim().toLowerCase();
   const name = String(booking.client_name || '').trim();
+  const phone = String(booking.client_phone || '').trim();
   const serviceName = String(booking.services?.name || '').trim();
   const when = new Date(booking.booked_at);
   if (!EMAIL_RE.test(email) || name.length < 3 || name.length > 120 || !serviceName || !Number.isFinite(when.getTime())) return null;
-  return { email, name, serviceName, when };
+  return { email, name, phone, serviceName, when };
 }
 
 async function loadBooking(bookingId, env, fetchImpl) {
   const base = String(env.SUPABASE_URL || '').replace(/\/$/, '');
   const key = env.SUPABASE_SERVICE_ROLE_KEY;
   if (!base || !key) throw new Error('booking-store-not-configured');
-  const query = new URLSearchParams({ select: 'id,client_name,client_email,booked_at,status,services(name)', id: `eq.${bookingId}`, limit: '1' });
+  const query = new URLSearchParams({ select: 'id,client_name,client_phone,client_email,booked_at,status,services(name)', id: `eq.${bookingId}`, limit: '1' });
   const response = await fetchImpl(`${base}/rest/v1/bookings?${query}`, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!response.ok) throw new Error('booking-store-unavailable');
   const rows = await response.json();
@@ -60,10 +61,10 @@ async function deliverConfirmation(bookingId, booking, env, fetchImpl) {
   if (!apiKey || !details) throw new Error('booking-not-sendable');
   const date = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(details.when);
   const time = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(details.when);
-  const safeName = escapeHtml(details.name); const safeService = escapeHtml(details.serviceName); const safeDate = escapeHtml(date); const safeTime = escapeHtml(time);
+  const safeName = escapeHtml(details.name); const safePhone = escapeHtml(details.phone || 'Não informado'); const safeService = escapeHtml(details.serviceName); const safeDate = escapeHtml(date); const safeTime = escapeHtml(time);
   await Promise.all([
     sendEmail({ to: details.email, subject: `Agendamento recebido — ${details.serviceName}`, html: `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#222"><h2>Agendamento recebido</h2><p>Olá, ${safeName}!</p><p>Recebemos seu agendamento na Nyl Hair Design:</p><p><strong>${safeService}</strong><br>${safeDate} às <strong>${safeTime}</strong></p><p>Se precisar remarcar, fale conosco pelo WhatsApp: (42) 98882-0334.</p></div>`, text: `Olá, ${details.name}!\n\nRecebemos seu agendamento na Nyl Hair Design:\n${details.serviceName}\n${date} às ${time}`, idempotencyKey: `booking-confirmation-client-${bookingId}`, apiKey }, fetchImpl),
-    sendEmail({ to: SALON_EMAIL, subject: `Novo agendamento — ${details.serviceName}`, html: `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#222"><h2>Novo agendamento</h2><p><strong>${safeName}</strong> agendou <strong>${safeService}</strong>.</p><p>${safeDate} às <strong>${safeTime}</strong>.</p><p>Contato: ${escapeHtml(details.email)}</p></div>`, text: `Novo agendamento\nCliente: ${details.name}\nServiço: ${details.serviceName}\n${date} às ${time}\nE-mail: ${details.email}`, idempotencyKey: `booking-confirmation-salon-${bookingId}`, apiKey }, fetchImpl),
+    sendEmail({ to: SALON_EMAIL, subject: `Novo agendamento — ${details.serviceName}`, html: `<div style="font-family:Arial,sans-serif;line-height:1.6;color:#222"><h2>Novo agendamento</h2><p><strong>${safeName}</strong> agendou <strong>${safeService}</strong>.</p><p>${safeDate} às <strong>${safeTime}</strong>.</p><p>Telefone: ${safePhone}<br>E-mail: ${escapeHtml(details.email)}</p></div>`, text: `Novo agendamento\nCliente: ${details.name}\nServiço: ${details.serviceName}\n${date} às ${time}\nTelefone: ${details.phone || 'Não informado'}\nE-mail: ${details.email}`, idempotencyKey: `booking-confirmation-salon-${bookingId}`, apiKey }, fetchImpl),
   ]);
 }
 
