@@ -1355,6 +1355,7 @@
     }
 
     .bk-panel {
+      min-width: 0;
       background: var(--card);
       border: 1px solid var(--border);
       padding: 2.5rem;
@@ -1650,7 +1651,7 @@
     }
 
     @media (max-width: 900px) {
-      .bk-head, .bk-grid { grid-template-columns: 1fr; }
+      .bk-head, .bk-grid { grid-template-columns: minmax(0, 1fr); }
       .bk-head { gap: 1rem; }
       .bk-summary { position: static; order: 2; }
     }
@@ -1905,7 +1906,7 @@
           <div class="bk-sum-row"><span>Quando</span><b id="bk-sum-day">—</b></div>
           <div class="bk-sum-row"><span>Horário</span><b id="bk-sum-time">—</b></div>
           <div class="bk-sum-row"><span>Duração</span><b>30 min</b></div>
-          <p class="bk-sum-foot">A confirmação chega no seu e-mail.</p>
+          <p class="bk-sum-foot">Atendimento de 30 minutos com hora marcada.</p>
           <div class="bk-sum-addr"><span>Rua Santos Dumont, 423</span><span>Ponta Grossa · PR</span></div>
         </aside>
       </div>
@@ -2496,9 +2497,9 @@
           <div class="bk-check" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17 19 7"/></svg>
           </div>
-          <h3>Horário reservado!</h3>
+          <h3>Recebemos seu agendamento!</h3>
           <p><b>${esc(state.service.name)}</b> · ${esc(cap(fmtLong.format(when)))} às <b>${fmtTime.format(when)}</b>.<br>
-          A confirmação será enviada para <b>${esc(fEmail.value.trim())}</b>. Se precisar remarcar, é só chamar no WhatsApp.</p>
+          Se precisar remarcar, é só chamar no WhatsApp.</p>
           <a class="btn-outline" href="${WPP}" target="_blank" rel="noopener">Falar no WhatsApp</a>
         </div>`;
       if (typeof window.gtag === 'function') window.gtag('event', 'agendamento_site', { service: state.service.name });

@@ -16,8 +16,8 @@ import{r as e}from"./supabase-Bo6pDbYz.js";var t=`America/Sao_Paulo`,n=`https://
           <div class="bk-check" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17 19 7"/></svg>
           </div>
-          <h3>Horário reservado!</h3>
+          <h3>Recebemos seu agendamento!</h3>
           <p><b>${x(f.service.name)}</b> · ${x(b(_.format(u)))} às <b>${v.format(u)}</b>.<br>
-          A confirmação será enviada para <b>${x(d.value.trim())}</b>. Se precisar remarcar, é só chamar no WhatsApp.</p>
+          Se precisar remarcar, é só chamar no WhatsApp.</p>
           <a class="btn-outline" href="${n}" target="_blank" rel="noopener">Falar no WhatsApp</a>
         </div>`,typeof window.gtag==`function`&&window.gtag(`event`,`agendamento_site`,{service:f.service.name})}),document.querySelectorAll(`[data-book]`).forEach(e=>e.addEventListener(`click`,()=>{if(f.services.length)D(e.dataset.book);else try{sessionStorage.setItem(`bk-want`,e.dataset.book)}catch{}})),E();
